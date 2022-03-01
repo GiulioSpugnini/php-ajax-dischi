@@ -1,6 +1,6 @@
 <?php
 
-$database = [
+$albums = [
     [
         'title' => 'New Jersey',
         'author' => 'Bon Jovi',
@@ -44,3 +44,14 @@ $database = [
         'genre' => 'Rock'
     ]
 ];
+$search = $_GET['search'] ?? '';
+$album_Result = $albums;
+if (!empty($search)) {
+    foreach ($albums as $album) {
+        $title = strtolower($album['title']);
+        $searched_album = trim(strtolower($search));
+        if (strpos($title, $searched_album) !== false) $album_Result[] = $album;
+    }
+}
+header('Content-Type: application/json');
+echo json_encode($album_Result);
