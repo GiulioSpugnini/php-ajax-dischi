@@ -67,15 +67,15 @@ $database = [
     </header>
     <main class="container">
         <ul class="d-flex flex-wrap justify-content-center my-1">
-            <li id="album" class="text-center m-2 p-2" v-for="album in albums" :key="album.title">
-                <?php foreach ($database as $album) { ?>
-                    <img class="p-2" src="<?php $album['poster'] ?>" alt="" />
-                    <h4 class="p-2"><?php $album['title'] ?></h4>
-                    <h5 class="text-secondary"><?php $album['author'] ?></h5>
-                    <h6 class="text-secondary"><?php $album['title'] ?></h6>
-                <?php
-                } ?>
-            </li>
+            <?php foreach ($database as $album) { ?>
+                <li id="album" class="text-center m-2 p-2">
+                    <img class="p-2" src="<?= $album['poster'] ?>" alt="" />
+                    <h4 class="p-2"> <?= $album['title'] ?> </h4>
+                    <h5 class="text-secondary"> <?= $album['author'] ?> </h5>
+                    <h6 class="text-secondary"> <?= $album['year'] ?> </h6>
+                </li>
+            <?php
+            } ?>
         </ul>
     </main>
 </body>
