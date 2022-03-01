@@ -67,7 +67,7 @@ $database = [
     </header>
     <main class="container">
         <ul class="d-flex flex-wrap justify-content-center my-1">
-            <?php foreach ($database as $album) { ?>
+            <?php foreach ($database as $album) :  ?>
                 <li id="album" class="text-center m-2 p-2">
                     <img class="p-2" src="<?= $album['poster'] ?>" alt="" />
                     <h4 class="p-2"> <?= $album['title'] ?> </h4>
@@ -75,7 +75,7 @@ $database = [
                     <h6 class="text-secondary"> <?= $album['year'] ?> </h6>
                 </li>
             <?php
-            } ?>
+            endforeach; ?>
         </ul>
     </main>
 </body>
