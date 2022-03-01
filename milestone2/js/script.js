@@ -9,7 +9,7 @@ const app = new Vue({
   methods: {
     getAlbumSearched() {
       axios
-        .get(`http://localhost/php-ajax-dischi/database.php?genre=${this.search}`)
+        .get(`http://localhost/php-ajax-dischi/database.php?search=${this.search}`)
         .then((res) => {
           this.albums = res.data;
         })

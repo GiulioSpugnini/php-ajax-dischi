@@ -37,8 +37,8 @@
         <div class="col-6">
           <i class="fab fa-spotify px-4"></i>
         </div>
-        <input v-model="search" @keyup.enter="search" type="text" placeholder="Cerca un album.." />
-        <button type="button" @click="search" class="m-2">Cerca</button>
+        <input v-model="search" @keyup.enter="getAlbumSearched" type="text" placeholder="Cerca un album.." />
+        <button type="button" @click="getAlbumSearched" class="m-2">Cerca</button>
       </header>
       <main class="container">
         <ul class="d-flex flex-wrap justify-content-center my-1">

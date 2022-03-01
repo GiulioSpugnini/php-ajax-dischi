@@ -47,10 +47,11 @@ $albums = [
 $search = $_GET['search'] ?? '';
 $album_Result = $albums;
 if (!empty($search)) {
+    $album_Result = [];
     foreach ($albums as $album) {
-        $title = strtolower($album['title']);
+        $genre = strtolower($album['genre']);
         $searched_album = trim(strtolower($search));
-        if (strpos($title, $searched_album) !== false) $album_Result[] = $album;
+        if (strpos($genre, $searched_album) !== false) $album_Result[] = $album;
     }
 }
 header('Content-Type: application/json');
